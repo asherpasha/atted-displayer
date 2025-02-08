@@ -101,7 +101,7 @@ class App
     payload =
       identifiers: ids
       type: "Gene"
-      caseSensitive: flase
+      caseSensitive: false
       wildCards: true
 
     url = @opts.service + "/ids"
