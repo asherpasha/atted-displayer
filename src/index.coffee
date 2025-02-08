@@ -188,7 +188,7 @@ class App
       @scoredict = {}
 
       _.each @allgenes, (geneObj) =>
-        @scoredict[geneObj.other_id] = geneObj.logit_score
+        @scoredict[geneObj.other_id.toUpperCase()] = geneObj.z
 
       deferred.resolve true
 
@@ -227,7 +227,7 @@ class App
 
 
     else
-      # Check to see if the table needs to be added
+    # Check to see if the table needs to be added
       table = $("#{@opts.target} > div.atted-table-wrapper > table.atted-table")
 
       if !table.length then $("#{@opts.target} > div.atted-table-wrapper").html("<table class='atted-table collection-table'></table>")
